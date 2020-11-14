@@ -65,27 +65,27 @@ function createMap(earthquakes) {
     // Define outdoormap, satellitemap, and grayscalemap layers
     var outdoorsmap = L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}", {
         attribution: "© <a href='https://www.mapbox.com/about/maps/'>Mapbox</a> © <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a> <strong><a href='https://www.mapbox.com/map-feedback/' target='_blank'>Improve this map</a></strong>",
-        tileSize: 512,
-        maxZoom: 18,
-        zoomOffset: -1,
+        // tileSize: 512,
+        maxZoom: 11,
+        // zoomOffset: -1,
         id: "mapbox.outdoors",
         accessToken: API_KEY
     });
 
     var satellitemap = L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}", {
         attribution: "© <a href='https://www.mapbox.com/about/maps/'>Mapbox</a> © <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a> <strong><a href='https://www.mapbox.com/map-feedback/' target='_blank'>Improve this map</a></strong>",
-        tileSize: 512,
-        maxZoom: 18,
-        zoomOffset: -1,
+        // tileSize: 512,
+        maxZoom: 11,
+        // zoomOffset: -1,
         id: "mapbox.satellite",
         accessToken: API_KEY
     });
 
     var grayscalemap = L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}", {
         attribution: "© <a href='https://www.mapbox.com/about/maps/'>Mapbox</a> © <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a> <strong><a href='https://www.mapbox.com/map-feedback/' target='_blank'>Improve this map</a></strong>",
-        tileSize: 512,
+        // tileSize: 512,
         maxZoom: 18,
-        zoomOffset: -1,
+        // zoomOffset: -1,
         id: "mapbox.grayscale",
         accessToken: API_KEY
     });
@@ -126,7 +126,7 @@ function createMap(earthquakes) {
     var faultlinequery = "https://raw.githubusercontent.com/fraxen/tectonicplates/master/GeoJSON/PB2002_plates.json";
 
     // Create the faultlines and add them to the faultline layer
-    d3.json(faultlinequery, function (data) {
+    d3.json(faultlinequery, function(data) {
         L.geoJSON(data, {
             style: function () {
                 return { color: "green", fillOpacity: 0 }
